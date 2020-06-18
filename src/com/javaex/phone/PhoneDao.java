@@ -58,7 +58,7 @@ public class PhoneDao {
 		}
 	}
 
-	// ********** 등록하기 **********
+	// 등록하기
 	public void PersonInsert(PersonVo vo) {
 		getConnect(); // 메모리 가져오기
 		try {
@@ -79,7 +79,7 @@ public class PhoneDao {
 		close();
 	}
 
-	// ********** 수정하기 **********
+	// 수정하기
 	public void PersonUpdate(PersonVo vo) {
 		getConnect();
 		try {
@@ -96,14 +96,14 @@ public class PhoneDao {
 			pstmt.setString(3, vo.getCompany());
 			pstmt.setInt(4, vo.getPerson_id());
 			pstmt.executeUpdate(); // 실행문 executeUpdate()했을때 내보내기 **중요**
-			
+
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
 		}
 		close();
 	}
 
-	// ********** 수정하기 **********
+	// 수정하기
 	public void PersonDelete(PersonVo vo) {
 		try {
 			getConnect();
@@ -124,7 +124,7 @@ public class PhoneDao {
 		close();
 	}
 
-	// ********** 리스트 **********
+	// 리스트
 	public List<PersonVo> getPhoneList() {
 		// 리스트 준비
 		List<PersonVo> phonelist = new ArrayList<PersonVo>();
